@@ -1,0 +1,57 @@
+.homepage{
+    overflow: hidden;
+    padding-bottom: 40vh;
+
+
+
+    .first-section {
+        height: 70vh;
+        background-image: url('../../assets/Home.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+    }
+     .left-section {
+         padding-top: 70px;
+
+         .button {
+             padding-top: 20px;
+         }
+     }
+        .home-heading-one{
+            font-weight: bold;
+            font-size: 50px;
+            color: rgb(59, 86, 209);
+            letter-spacing: 2px;
+    }
+    .second-section {
+        padding-top: 100px;
+    }
+    .home-heading-two {
+           font-weight: bold;
+            font-size: 40px;
+            color: rgb(59, 86, 209);
+            letter-spacing: 2px;
+    }
+    .home-paragraph-one{
+        font-weight: 500;
+        font-size: 18px;
+        color: rgb(66, 65, 65);
+        letter-spacing: 2px;
+    }
+    .images{
+        width: 150px;
+        height: 250px;
+    }
+    .btn {
+        letter-spacing: 4px;
+        padding: 10px 20px;
+        color: blue;
+        background-color: white;
+        border: 1px solid blue;
+    &:hover{
+        color: white;
+        background-color: blue;
+    }
+    }
+}

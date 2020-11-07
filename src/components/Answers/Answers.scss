@@ -1,0 +1,40 @@
+.answered {
+    height: 100vh;
+}
+
+.answers {
+    padding-top: 50px;
+    padding-bottom: 100px;
+
+    .container {
+        border:  white 1px solid;
+        border-radius: 5%;
+		box-sizing: border-box;
+        box-shadow:  0.5rem 0.5rem 0.5rem 0.5rem rgb(228, 225, 225);
+        width: 80%;
+        margin: auto;
+        padding-bottom:50px;
+       .name {
+           color: blue;
+           letter-spacing: 4px;
+           padding: 5px 20px;
+           font-weight: 800;
+       }
+
+        .list {
+            padding-top: 10px;
+        }
+        .header {
+            color: rgba(102, 149, 211, 0.8);
+            font-size: 23px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            padding: 5px 20px;
+            text-align: center;
+        }
+        .btn-primary {
+            letter-spacing: 4px;
+            padding: 5px 20px;
+        }
+    }
+}

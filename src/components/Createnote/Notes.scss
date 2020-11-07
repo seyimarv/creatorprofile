@@ -1,0 +1,26 @@
+.notes {
+    height: 100vh;
+
+    .container {
+        border:  white 1px solid;
+		box-sizing: border-box;
+        box-shadow:  0.5rem 0.5rem 0.5rem 0.5rem rgba(0,0,0,.15);
+        width: 100%;
+        margin: auto;
+        height: 80vh;
+    }
+    .title {
+        width: 64%;
+        margin: auto;
+    }
+
+    .textarea {
+        height: 50vh;
+        width: 80%;
+        margin: auto;
+    }
+    .btn-primary {
+        letter-spacing: 4px;
+        padding: 10px 20px;
+    }
+}

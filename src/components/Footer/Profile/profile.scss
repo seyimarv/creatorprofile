@@ -1,0 +1,81 @@
+.profilepage {
+    overflow: hidden;
+    
+
+   .container {
+    width: 100%;
+    padding-bottom: 100px;
+
+    .creator {
+        font-weight: 800;
+        font-size: 25px;
+        color: rgb(59, 61, 68);
+        letter-spacing: 1px;
+    }
+     
+    .logo {
+        height: 70px;
+        width: 80px;
+    }
+    .box-1 {
+        border:  white 1px solid;
+		box-sizing: border-box;
+        box-shadow:  0.3rem 0.3rem 0.3rem 0.3rem  rgba(0,0,0,.15);
+        margin: auto;
+        height: 80%;
+      
+
+        .Dash {
+            font-weight: bold;
+            font-size: 25px;
+            color: rgb(59, 61, 68);
+            letter-spacing: 1px;
+
+        }
+        .box {
+            border: black 1px solid;
+            height: 30vh;
+            
+
+        }
+
+        .title {
+            padding-top: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: rgb(59, 61, 68);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .title2 {
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(59, 61, 68);
+            letter-spacing: 1px;
+            text-align: center;
+
+        }
+        .title3 {
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(59, 61, 68);
+            letter-spacing: 1px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 10px;
+
+        }
+    
+    }
+   }
+   .image {
+       height: 100px;
+       width: 100%;
+   }
+   .btn-primary {
+    letter-spacing: 4px;
+    padding: 10px 20px;
+   }
+
+}
