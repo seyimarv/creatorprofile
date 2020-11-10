@@ -5,7 +5,9 @@ import firebase from '../../firebase/firebase'
 
 
 
-const EditProfile = ({currentUser}) => {
+
+const EditProfile = ({currentUser, history}) => {
+
     const [userDetails, setUserDetails] = useState(currentUser)
     const {id, firstName, userName, secondName} = userDetails
 
@@ -13,11 +15,12 @@ const EditProfile = ({currentUser}) => {
     
 
    
-    const handleSubmit =  event => {
+    const handleSubmit = async event => {
         event.preventDefault();
 
+       { 
         const userRef= firebase.firestore()
-        userRef.collection('users').doc(id).update({
+        await userRef.collection('users').doc(id).update({
              userName: userName,
              secondName: secondName,
              firstName: firstName
@@ -28,8 +31,9 @@ const EditProfile = ({currentUser}) => {
             secondName: '',
             firstName: ''
         })
+        history.push('/ProfilePage')
 
-    }
+    }}
 
     const  handleChange = event => {
         const { name, value } = event.target;
@@ -61,7 +65,8 @@ const EditProfile = ({currentUser}) => {
                             </div>
                         </div>
                         <div className='button'>
-                        <button type="submit"  class="btn btn-secondary mt-5 ">Edit</button>
+                        <button type="submit"  class="btn btn-primary mt-5 ">Edit</button>
+                  
                         </div>
                 </form>
                 

@@ -3,13 +3,13 @@ import {connect} from 'react-redux'
 import Answers from './Answers'
 import Loading from '../Loading/Loading'
 
-const AnswersCon = ({currentUser}) => {
+const AnswersCon = ({currentUser, history}) => {
 
     return (
         <div>
             {
               currentUser ?   <div>
-               <Answers currentUser={currentUser} /> </div>: <Loading />
+               <Answers currentUser={currentUser} history={history}/> </div>: <Loading />
               
             }
         </div>

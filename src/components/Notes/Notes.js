@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useEffect} from 'react'
 import {setCurrentNoteArray} from '../../redux/Notes/Notes.actions'
 import firebase from '../../firebase/firebase'
 import {connect} from 'react-redux'
@@ -6,13 +6,12 @@ import Note from './Note'
 import './Notes.scss'
 const NotesPage = ({currentUser, setCurrentNoteArray, noteArray}) => {
     const {id} = currentUser
-    const [notesArray, setNotesArray] = useState([])
     
 
-    useEffect(() => {
+    useEffect( () => {
         const userRef= firebase.firestore()
         const noteRef = userRef.collection('users').doc(id).collection('notes');
-        noteRef.get().then(result => {
+         noteRef.get().then(result => {
             const fetchedNotes = [];
             result.forEach(doc => {
                 const fetchedNote = {
@@ -42,7 +41,7 @@ const NotesPage = ({currentUser, setCurrentNoteArray, noteArray}) => {
             
              noteArray.map(({id, ...otherProps}) => (
                
-                 <div className="col-md-6 col-sm-12 col-lg-4">
+                 <div className="col-md-6 col-sm-12 col-lg-4 pt-3">
                   <div className='cards'>
                    <Note key={id} id= {id} currentUser={currentUser} {...otherProps}/>
                    </div>

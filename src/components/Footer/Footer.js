@@ -3,7 +3,7 @@ import './footer.styles.scss'
 
 
 const Footer = () => (
-   <div className="footer fixed-botom">
+   <div className="footer fixed-bottom">
    <div className="container">
        <div className="row">
            <div className="col-md-3">

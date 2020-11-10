@@ -36,7 +36,7 @@ const App = ({currentUser, setCurrentUser}) =>  {
           });
         });
       }
-     
+       
     });
 
      return () => {
@@ -75,11 +75,11 @@ const App = ({currentUser, setCurrentUser}) =>  {
           />
 
          <Route exact path='/ProfilePage' component={ProfileContainer} /> 
-         <Route path = '/ProfilePage/Editprofile' component={EditContainer} />
+         <Route path = '/ProfilePage/Editprofile' component={EditContainer}  />
          <Route path='/ProfilePage/CreateNote' component={CreateNoteContainer} />
          <Route path='/ProfilePage/ViewNotes' component={NoteCon} />
          <Route path='/ProfilePage/CreateQuestions' component={CreateQuestionsCon} />
-         <Route path='/ProfilePage/AnswersCon' component={AnswersCon} />
+         <Route path='/AnswersCon' component={AnswersCon} />
 
       </Switch>
       <Footer />

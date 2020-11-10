@@ -3,6 +3,7 @@ import './SigUp.scss'
 import { auth, createUserProfile } from '../../firebase/firebase'
 
 
+
 const SignUp = () => {
     const [userDetails, setUserDetails] = useState({
         firstName: '',
@@ -21,7 +22,7 @@ const SignUp = () => {
     if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
-    }
+    } 
 
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
@@ -38,6 +39,7 @@ const SignUp = () => {
       });
     } catch (error) {
       console.error(error);
+      alert('Sign up failed, check if password is up to 6 characters')
     }
   };
 
@@ -46,8 +48,7 @@ const SignUp = () => {
         const { name, value } = event.target;
     
         setUserDetails({...userDetails, [name]: value });
-        console.log(email)
-        console.log(password)
+        
       };
     
     return (
@@ -58,30 +59,30 @@ const SignUp = () => {
            <form className='form'>
               <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="First name" onChange={handleChange}  name='firstName' value={firstName}/>
+                    <input type="text" class="form-control" placeholder="First name" onChange={handleChange}  name='firstName' required value={firstName}/>
                     </div>
                     <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name" onChange={handleChange} name='secondName' value={secondName} />
+                    <input type="text" class="form-control" placeholder="Last name" onChange={handleChange} name='secondName' required value={secondName} />
                     </div>
                 </div>
                 <div class="form-group pt-3">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="emailaddress" onChange={handleChange} name='email' value={email}/>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="emailaddress"  required onChange={handleChange} name='email' value={email}/>
                 </div>
                 <div class="row">
                     <div class="col">
-                    <input type="text" class="form-control" placeholder="Username" onChange={handleChange} name='userName' value={userName} />
-                    </div>
-                    <div class="col">
-                    <input type="password" class="form-control" placeholder="password" onChange={handleChange} name='password' value={password} />
+                    <input type="text" class="form-control" placeholder="Username" onChange={handleChange} name='userName' required value={userName} />
+                </div>
+                    <div class="col-12 pt-2">
+                    <input type="password" class="form-control" placeholder="password, min of 6 characters" required minLength={6} onChange={handleChange} name='password' value={password} />
                     </div>
                 </div>
                 <div class="row pt-3">
-                    <div class="col-6">
-                    <input type="password" class="form-control" placeholder="confirm password" onChange={handleChange} name='confirmPassword' value={confirmPassword} />
+                    <div class="col">
+                    <input type="password" class="form-control" placeholder="confirm password" minLength={6} onChange={handleChange} name='confirmPassword' required value={confirmPassword} />
                     </div>
                 </div>
                 <div className='button'>
-                <button type="submit" onClick={handleSubmit} class="btn btn-secondary mt-5 ">Sign up</button>
+                <button type="submit" onClick={handleSubmit} class="btn btn-primary mt-4 mb-2 ">Sign up</button>
                 </div>
            </form>
           

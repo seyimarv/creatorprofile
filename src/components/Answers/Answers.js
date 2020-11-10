@@ -8,7 +8,7 @@ import Answer from './Answer'
 
 
 
-const Answers = ({setCurrentAnswers, currentUser, currentAnswers}) => {
+const Answers = ({setCurrentAnswers, currentUser, currentAnswers, history}) => {
     const [answers, setAnswersArray] = useState([])
     
     useEffect(() => {
@@ -38,7 +38,7 @@ const Answers = ({setCurrentAnswers, currentUser, currentAnswers}) => {
        { answers.length === 0 ? <p className='answered'>You haven't answered the questions yet</p> :
        <>
         {
-            currentAnswers ? <Answer currentAnswers={currentAnswers} currentUser={currentUser}/> : <Loading />
+            currentAnswers ? <Answer currentAnswers={currentAnswers} currentUser={currentUser} history={history}/> : <Loading />
         }
         </>}
         </>

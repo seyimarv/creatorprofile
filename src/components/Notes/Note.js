@@ -17,8 +17,8 @@ const Note = ({id, title, text, deleteNote, isDeleted, currentUser}) => {
         //     {text}
         //      <button >delete</button>
         // </div>
-        <div class="card border-secondary" style={{width: 20 + "rem"}}>
-            <div class="card-header">
+        <div className="card border-secondary" style={{width: 18 + "rem"}}>
+            <div className="card-header">
            
             <p>{title}</p>
              <Delete onClick={() => runOnDelete()} title='delete' className='delete'/>

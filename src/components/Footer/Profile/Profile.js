@@ -60,7 +60,7 @@ const ProfilePage = ({currentUser}) => {
                      </div>
                      <hr />
                      <div className='row'>
-                     <Link to='ProfilePage/AnswersCon'><p className='Answers col-12'>View Answers</p></Link>
+                     <Link to='AnswersCon'><p className='Answers col-12'>View Answers</p></Link>
                      </div>
 
                   </div>

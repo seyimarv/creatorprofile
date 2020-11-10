@@ -10,6 +10,7 @@ const Header = ({ currentUser, LogOut }) => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
   const onLogout = () => {
     auth.signOut()
     LogOut()
@@ -29,7 +30,7 @@ const Header = ({ currentUser, LogOut }) => {
                     { currentUser ? null :
                       <Link to= '/' className=" nav-link"><p className='nav-item pl-2'>Home </p> <span class="sr-only">(current)</span></Link>}
                     {  currentUser ?
-                      <div className='nav-item nav-link' onClick={onLogout}>
+                      <div className='nav-item nav-link link' onClick={onLogout}>
                       <Link to='/'><p className='nav-item'> log out </p></Link> 
                       </div> :
 

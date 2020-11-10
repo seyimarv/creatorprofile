@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './edit.scss'
 import firebase from '../../firebase/firebase'
 
-const EditAnswers = ({currentUser, currentAnswers}) => {
+const EditAnswers = ({currentUser, currentAnswers, setEditing}) => {
     const {id} = currentUser
     const {nickname, sport, country, partner, hobby, pets, bestfriend, live} = currentAnswers
     const [answers, editAnswers] = useState({
@@ -16,18 +16,17 @@ const EditAnswers = ({currentUser, currentAnswers}) => {
         newlive: live
     })
     const {newnickname, newsport, newcountry, newpartner, newhobby,newpets, newbestfriend, newlive} = answers
-
     const  handleChange = e => {
         const { name, value } = e.target;
     
         editAnswers({...answers, [name]: value });
       };
  
-      const onSubmit = e => {
+      const onSubmit = async e => {
           e.preventDefault()
 
-          const ansRef = firebase.firestore().collection('users').doc(id).collection('questions').doc(currentAnswers.id)
-          ansRef.set({
+      { const ansRef = firebase.firestore().collection('users').doc(id).collection('questions').doc(currentAnswers.id)
+          await ansRef.set({
               nickname: newnickname,
               sport: newsport,
               country: newcountry,
@@ -38,7 +37,8 @@ const EditAnswers = ({currentUser, currentAnswers}) => {
               live: newlive
 
           })
-          editAnswers({
+      
+         await editAnswers({
               newnickname: '',
               newbestfriend: '',
               newhobby: '',
@@ -48,14 +48,14 @@ const EditAnswers = ({currentUser, currentAnswers}) => {
               newcountry: '',
               newsport: ''
           }) 
-          
-      }
+          alert('Answers Edited')
+      }}
     
     
     return (
-        <div className='edit pt-5'>
-         <div className='container pb-5'>
-         <form >
+        <div className='edi pt-3'>
+         <div className=' container con'>
+         <form onSubmit={onSubmit}>
           <div className='row'>
            <div className='col-12'>
              <p className='title'>Edit your Answers</p>
@@ -134,7 +134,7 @@ const EditAnswers = ({currentUser, currentAnswers}) => {
             </div>
           </div>
                    <div className='button text-center'>
-                        <button type="submit" class="btn btn-primary" onClick={onSubmit}>Submit Answers</button>
+                        <button type="submit" class="btn btn-primary">Submit Answers</button>
                         </div>
            
           </form>

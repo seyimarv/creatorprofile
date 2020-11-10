@@ -4,7 +4,7 @@ import EditAnswers from './EditAnswers'
 
 
 
-const Answer =({currentAnswers, currentUser}) => {
+const Answer =({currentAnswers, currentUser, history}) => {
     const {nickname, sport, country, partner, hobby, pets, bestfriend, live} = currentAnswers
     const [Editing, setEditing] = useState(false)
     const {userName} = currentUser
@@ -16,7 +16,7 @@ const Answer =({currentAnswers, currentUser}) => {
        <div>
 
         { !currentAnswers ? <p>no answers yet</p> : <div>
-{  Editing ? <EditAnswers currentAnswers={currentAnswers} currentUser={currentUser}  />  :    <div className='answers pt-5'>
+{  Editing ? <EditAnswers currentAnswers={currentAnswers} currentUser={currentUser} setEditing={setEditing}/>  :    <div className='answers pt-5'>
             <div className='container'>
             <div className='row'>
             <div className='col-6 pt-5'>

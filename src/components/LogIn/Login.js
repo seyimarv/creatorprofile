@@ -17,6 +17,7 @@ const Login = () => {
             setUser({ email: '', password: '' });
           } catch (error) {
             console.log(error);
+            alert('login failed, check your login details')
           }
         
     }
@@ -41,10 +42,10 @@ const Login = () => {
                 <div class="form-group pt-2">
                     <input type="password" class="form-control" name='password' value={password} id="exampleFormControlInput1" placeholder="password" onChange={handleChange}/>
                 </div>
-                <button type="button" class="btn btn-secondary btn-lg btn-block" onClick={handleSubmit}>Log in</button>
+                <button type="button" class="btn btn-secondary btn-md btn-block" onClick={handleSubmit}>Log in</button>
           </form>
           <div className='pt-2'>
-          <button type="button" class="btn btn-primary btn-lg btn-block" onClick={signInWithGoogle} >Log in with Google</button>
+          <button type="button" class="btn btn-primary btn-md btn-block" onClick={signInWithGoogle} >Log in with Google</button>
           </div>
           <div className='title2 pt-2'>
           <p >Don't have an account?</p>

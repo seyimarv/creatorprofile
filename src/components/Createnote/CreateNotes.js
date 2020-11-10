@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
 import './Notes.scss'
 import {connect} from 'react-redux'
-// import {setCurrentNote} from '../../redux/Notes/Notes.actions'
+
 import firebase from '../../firebase/firebase'
-// import {convertNotesSnapshotToMap} from '../../firebase/firebase'
-import firestore from '../../firebase/firebase'
+
+
 
 const CreateNote = ({currentUser}) => {
     const [note, setNote] = useState({title:'', text: ''})
@@ -27,6 +27,7 @@ const CreateNote = ({currentUser}) => {
               text: '',
               title: ''
           })
+          alert('Note submitted')
       }
 
 
